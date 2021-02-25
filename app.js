@@ -2,6 +2,8 @@
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+const chalk = require("chalk");
+
 
 //output folder
 const OUTPUT_DIR = path.resolve(__dirname, "output");
@@ -23,7 +25,7 @@ const render = require("./lib/htmlRenderer");
 const fullTeam = [];
 
 function promptManager() {
-    console.log("Let's build your team!");
+    console.log(chalk.red.underline.bold("Let's build your team!"));
     inquirer
         .prompt([
             {
@@ -63,8 +65,8 @@ function promptManager() {
                 }
             },
         ])
-        .then(response => {
-            console.log(response);
+        .then(function (response) {
+            console.log(chalk.magenta("Manager added!"));
             const manager = new Manager(
                 response.managerName,
                 response.managerID,
@@ -78,14 +80,14 @@ function promptManager() {
         promptManager();
 
         function addTeamMembers() {
+            console.log(chalk.underline.red("Let's add more team members!"));
             inquirer
             .prompt([
                 {
                     type: 'list',
                     name: 'addMembers',
-                    message: 'Add team members:',
+                    message: 'Select member type:',
                     choices: [
-                        'Add Manager',
                         'Add Engineer',
                         'Add Intern',
                         'Done Adding Members',
@@ -94,9 +96,6 @@ function promptManager() {
             ])
             .then(function (data) {
                 switch (data.addMembers) {
-                    case 'Add Manager': 
-                        promptManager();
-                        break;
                     case 'Add Engineer': 
                         promptEngineer();
                         break;
@@ -111,7 +110,7 @@ function promptManager() {
         }
 
         function promptEngineer() {
-            console.log('Adding Engineer!');
+            console.log(chalk.yellow('Adding Engineer!'));
             inquirer
             .prompt([
                 {
@@ -152,6 +151,7 @@ function promptManager() {
                 },
             ])
             .then(function (response) {
+                console.log(chalk.magenta("Engineer added!"));
                 const engineer = new Engineer(
                     response.engineerName,
                     response.engineerID,
@@ -164,7 +164,7 @@ function promptManager() {
         }; 
 
         function promptIntern() {
-            console.log('Adding Intern!');
+            console.log(chalk.yellow('Adding Intern!'));
             inquirer
             .prompt([
                 {
@@ -205,6 +205,7 @@ function promptManager() {
                 },
             ])
             .then(function (response) {
+                console.log(chalk.magenta("Intern added!"));
                 const intern = new Intern(
                     response.internName,
                     response.internID,
@@ -217,6 +218,7 @@ function promptManager() {
         };
 
         function buildTeam() {
+            console.log(chalk.inverse.red("Generating Team!"));
             fs.writeFileSync(outputPath, render(fullTeam), 'utf-8');
         };
 
