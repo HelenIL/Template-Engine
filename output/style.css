@@ -7,7 +7,7 @@ h1 {
 .jumbotron {
     background-color: black;
     color: rgb(120, 162, 204);
-    border: 8px solid rgb(120, 162, 204);
+    opacity: 80%;
 }
 
 .mgr {
@@ -33,5 +33,9 @@ h1 {
 }
 
 body {
-    background-color: rgb(247, 244, 230);
+    background-image: url('../assets/outer-space.png');
+}
+
+#main {
+  color: rgb(199, 157, 215);
 }
