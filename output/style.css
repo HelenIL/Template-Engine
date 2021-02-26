@@ -5,13 +5,15 @@ h1 {
 }
 
 .jumbotron {
-    border: 5px solid rgb(87, 167, 252);
-    background-color: rgb(191, 212, 219);
+    background-color: black;
+    color: rgb(120, 162, 204);
+    border: 8px solid rgb(120, 162, 204);
 }
 
 .mgr {
     background-color: rgb(60, 153, 220);
     font-family: 'Merriweather', serif;
+    border: 2px solid black;
 }
 
 .card {
@@ -21,11 +23,13 @@ h1 {
 .eng {
     background-color: rgb(102, 211, 250);
     font-family: 'Merriweather', serif;
+    border: 2px solid black;
 }
 
 .intrn {
     background-color: rgb(213, 243, 254);
     font-family: 'Merriweather', serif;
+    border: 2px solid black;
 }
 
 body {
