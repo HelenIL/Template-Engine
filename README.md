@@ -47,7 +47,7 @@ run node app.js
 
 <h2>Command line application in action:</h2>
 
-![Template Engine](assets/MyTeam.gif)
+![Template Engine](assets/MyTeam2.gif)
 
 <h2>Screenshot of rendered HTML employee page:</h2>
 
