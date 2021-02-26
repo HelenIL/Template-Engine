@@ -14,9 +14,6 @@ so that I have quick access to emails and GitHub profiles"
 
 Build a Node CLI that takes in employee information and generates an HTML webpage that displays summaries for each person. The user is guided through a series of specific prompts based on employee type which are then pushed onto individual cards. The application must pass all tests run. 
 
-<h2>Deployed Page <a href="https://helenil.github.io/Template-Engine/"> Here</a></h2>
-
-
 ---
 ## Table of Contents
 
